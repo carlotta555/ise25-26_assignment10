@@ -1,17 +1,18 @@
 package de.seuhd.observer;
 
 public abstract class Subject {
-    // TODO: Add fields.
-
+ConcreteSubject subject;
     void attach(Observer observer) {
-        // TODO: Implement attach method.
+    attach(observer);
     }
 
     void detach(Observer observer) {
-        // TODO: Implement detach method.
+        detach(observer);
     }
 
     protected void notifyObservers() {
-        // TODO: Implement fireUpdate method.
+        if(!subject.equals(null)){
+        System.out.println("Sending update to observers..");
+    }
     }
 }
