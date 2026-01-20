@@ -1,18 +1,23 @@
 package de.seuhd.observer;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Subject {
-ConcreteSubject subject;
-    void attach(Observer observer) {
-    attach(observer);
+
+    private List<Observer> observers = new ArrayList<>();
+
+    public void attach(Observer o) {
+        observers.add(o);
     }
 
-    void detach(Observer observer) {
-        detach(observer);
+    public void detach(Observer o) {
+        observers.remove(o);
     }
 
     protected void notifyObservers() {
-        if(!subject.equals(null)){
-        System.out.println("Sending update to observers..");
-    }
+        System.out.println("Sending update to observers ...");
+        for (Observer o : observers) {
+            o.update(this);
+        }
     }
 }

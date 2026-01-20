@@ -1,12 +1,17 @@
 package de.seuhd.observer;
 
-public class ConcreteSubject {
+
+public class ConcreteSubject extends Subject {
     int value;
-    Subject subject;
+
     public void setValue(int value)
     {
         this.value = value;
         System.out.println("Value of subject updated to " + value);
-        subject.notifyObservers();
+        notifyObservers();
+    }
+    public int getValue()
+    {
+        return value;
     }
 }
